@@ -16,6 +16,9 @@
 \description{
   Creates and tests for objects of class \code{"date"}.
 }
+\synopsis{
+is.date(x)
+}
 \usage{
 as.date(x)
 is.date(x)
