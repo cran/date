@@ -180,7 +180,7 @@ mdy.date <- function(month, day, year, nineteen = TRUE, fillday = FALSE,
 
     ## Force input vectors to be the same length, but in a way that
     ## gives an error if their lengths aren't multiples of each other.
-    temp <- 0 * (month + day + year)
+    temp <- numeric(length(month + day + year))
     month <- month + temp
     day   <- day + temp
     year  <- year + temp
