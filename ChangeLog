@@ -1,3 +1,10 @@
+Sat May  6 09:30:34 2000  Kurt Hornik  <Kurt.Hornik@ci.tuwien.ac.at>
+
+	* DESCRIPTION (Version): New version in 1.2-3.
+
+	* R/date.R: Improved plot.date() (following suggestions by Uwe
+	Ligges <ligges@statistik.uni-dortmund.de>).
+
 Sun May  2 01:32:48 1999  Kurt Hornik  <Kurt.Hornik@ci.tuwien.ac.at>
 
 	* DESCRIPTION (Version): New version is 1.2-2.

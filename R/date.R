@@ -111,30 +111,39 @@ as.vector.date <- function(x, type = "any") {
 is.na.date <- function(x) {
     NextMethod(.Generic)
 }
-plot.date <- function(x, y, ..., xaxt, xlab, ylab) {
-    class(x) <- NULL
-    if (missing(xlab)) xlab <- deparse(substitute(x))
-    if (missing(ylab)) ylab <- deparse(substitute(y))
-    
-    if (!missing(xaxt))
-        plot(x, y, ..., xaxt = xaxt, xlab = xlab, ylab = ylab)
+plot.date <- function(x, y, ..., axes, xaxt, xlab, ylab,
+                      xlim = range(x, na.rm = TRUE),
+                      ylim = range(y, na.rm = TRUE))
+{
+    if(missing(xlab))
+        xlab <- deparse(substitute(x))
+    if(missing(ylab))
+        ylab <- deparse(substitute(y))
+    class(x) <- NULL                    # after deparse(substitute())
+    if(!missing(axes) && !axes)         # argument axes works
+        plot(x, y, ..., axes = axes, xlab = xlab, ylab = ylab,
+            xlim = xlim, ylim = ylim)
+    else if(!missing(xaxt))
+        plot(x, y, ..., xaxt = xaxt, xlab = xlab, ylab = ylab,
+            xlim = xlim, ylim = ylim)
     else {
-	plot(x, y, ..., xaxt = "n", xlab = xlab, ylab = ylab)
-	x <- x[!is.na(x)]
-	xd<- date.mdy(x)
-	temp <- pretty(x, 5)
-	delta <- temp[2] - temp[1]
-	if (delta < 1)
-	    temp <- seq(min(x), max(x), 1)
-	else if (delta > 182) {         # try to do it in years
-	    temp <- xd$year + (x - mdy.date(1, 1, xd$year)) / 365
-	    temp <- pretty(temp, 5)
-	    temp <- mdy.date(1, 1, floor(temp)) +
-                floor((temp %% 1) * 365) 
-	    }
-	xlim <- par("usr")[1:2]
-	temp <- temp[temp > xlim[1] & temp < xlim[2]]
-	axis(1, temp, as.character.date(temp))
+        plot(x, y, ..., xaxt = "n", xlab = xlab, ylab = ylab,
+            xlim = xlim, ylim = ylim)
+        x <- c(x[!is.na(x)], xlim)      # draws axis completely when
+                                        # using xlim
+        xd <- date.mdy(x)
+        ## get default for n from par("lab")
+        temp <- pretty(x, n = par("lab")[1])
+        delta <- temp[2] - temp[1]
+        if(delta < 1)
+            temp <- seq(min(x), max(x), 1)
+        else if(delta > 182) {
+            temp <- xd$year + (x - mdy.date(1, 1, xd$year))/365
+            ## get default for n from par("lab")
+            temp <- pretty(temp, n = par("lab")[1]) 
+            temp <- mdy.date(1, 1, floor(temp)) + floor((temp %% 1) * 365)
+        }
+        axis(1, temp, as.character.date(temp), ...)
     }
 }
 print.date <- function(x, quote, prefix) {
