@@ -1,0 +1,9 @@
+Sun May  2 01:32:48 1999  Kurt Hornik  <Kurt.Hornik@ci.tuwien.ac.at>
+
+	* DESCRIPTION (Version): New version is 1.2-2.
+
+	* R/date.R: New functions [[.date() and as.vector.date().
+
+Sun Apr 25 12:08:41 1999  Kurt Hornik  <Kurt.Hornik@ci.tuwien.ac.at>
+
+	* DESCRIPTION (Version): New version is 1.2-1.
