@@ -1,3 +1,12 @@
+Sun Jun 18 12:09:05 2000  Kurt Hornik  <Kurt.Hornik@ci.tuwien.ac.at>
+
+	* DESCRIPTION (Version): New version is 1.2-4.
+
+	* man/*.Rd: Add keyword `chron'.
+
+	* man/is.date.Rd: Rename to `date.object.Rd'.  Add \alias entries
+	for methods for objects of class "date".
+
 Sat May  6 09:30:34 2000  Kurt Hornik  <Kurt.Hornik@ci.tuwien.ac.at>
 
 	* DESCRIPTION (Version): New version in 1.2-3.
