@@ -17,7 +17,8 @@ as.date <- function(x, order = "mdy", ...) {
                    as.character(x),
                    month =integer(nn),
                    day = integer(nn),
-                   year = integer(nn))
+                   year = integer(nn),
+                   PACKAGE = "date")
 	month <- ifelse(temp$month < 1 | temp$month > 12, NA, temp$month)
 	day   <- ifelse(temp$day == 0, NA, temp$day)
 	year  <- ifelse(temp$year == 0, NA, temp$year)
