@@ -1,3 +1,11 @@
+2003-07-29  Kurt Hornik  <Kurt.Hornik@wu-wien.ac.at>
+
+	* DESCRIPTION (Version): New version is 1.2-15.
+
+	* R/date.R (print.date): print.atomic() is gone from R 1.8.0.
+	Also, replace code repeated from as.character.date() by a call to
+	it.
+
 2003-07-28  Kurt Hornik  <Kurt.Hornik@wu-wien.ac.at>
 
 	* DESCRIPTION (Version): New version is 1.2-14.

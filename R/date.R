@@ -148,14 +148,9 @@ plot.date <- function(x, y, ..., axes, xaxt, xlab, ylab,
     }
 }
 print.date <- function(x, quote, prefix, ...) {
-    fun <- options()$print.date
-    if (is.null(fun))
-        x <- date.ddmmmyy(x)
-    else
-        x <- get(fun)(x)
     if (missing(quote))
         quote <- FALSE
-    invisible(print.atomic(x, quote))
+    invisible(print(as.character(x), quote = quote))
 }
 summary.date <- function(object, ...) {
     y <- as.character(range(object))
