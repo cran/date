@@ -255,18 +255,18 @@ date.ddmmmyy <- function(sdate) {
     tyr <- ifelse(floor(temp$year/100) == 19,
                   temp$year-1900, temp$year)
     month <- month.abb[temp$month]
-    ifelse(is.na(sdate), "NA",
+    ifelse(is.na(sdate), as.character(NA),
            paste(temp$day, month, tyr, sep = ""))
 }
 date.mmddyy <- function(sdate, sep = "/") {
     temp <- date.mdy(sdate)
     tyr <- ifelse(floor(temp$year / 100) == 19,
                   temp$year - 1900, temp$year)
-    ifelse(is.na(sdate), "NA",
+    ifelse(is.na(sdate), as.character(NA),
            paste(temp$month, temp$day, tyr, sep = sep))
 }
 date.mmddyyyy <- function(sdate, sep = "/") {
     temp <- date.mdy(sdate)
-    ifelse(is.na(sdate), "NA",
+    ifelse(is.na(sdate), as.character(NA),
            paste(temp$month, temp$day, temp$year, sep = sep))
 }

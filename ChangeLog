@@ -1,3 +1,10 @@
+2002-03-31  Kurt Hornik  <Kurt.Hornik@wu-wien.ac.at>
+
+	* DESCRIPTION (Version): New version is 1.2-12.
+
+	* R/date.R (date.ddmmmyy, date.mmddyy, date.mmddyyyy): Be
+	defensive about R 1.5.0 character NAs.
+
 2001-11-27  Kurt Hornik  <Kurt.Hornik@ci.tuwien.ac.at>
 
 	* DESCRIPTION (Version): New version is 1.2-11.
