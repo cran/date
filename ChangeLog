@@ -1,3 +1,8 @@
+2004-06-09  Kurt Hornik  <Kurt.Hornik@wu-wien.ac.at>
+
+	* DESCRIPTION (Version): New version is 1.2-18.
+	(License): Change to GPL as permitted by Terry Therneau.
+
 2004-01-31  Kurt Hornik  <Kurt.Hornik@wu-wien.ac.at>
 
 	* DESCRIPTION (Version): New version is 1.2-17.
