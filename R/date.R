@@ -147,7 +147,7 @@ plot.date <- function(x, y, ..., axes, xaxt, xlab, ylab,
         axis(1, temp, as.character.date(temp), ...)
     }
 }
-print.date <- function(x, quote, prefix) {
+print.date <- function(x, quote, prefix, ...) {
     fun <- options()$print.date
     if (is.null(fun))
         x <- date.ddmmmyy(x)
