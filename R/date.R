@@ -101,7 +101,7 @@ as.character.date <- function(x) {
     else
         get(fun)(x)
 }
-as.data.frame.date <- .Alias(as.data.frame.vector)
+as.data.frame.date <- as.data.frame.vector
 as.vector.date <- function(x, type = "any") {
     if (type == "any" || type == "character" || type == "logical" || 
         type == "list") 
