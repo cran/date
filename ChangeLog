@@ -1,3 +1,11 @@
+2003-08-06  Kurt Hornik  <Kurt.Hornik@wu-wien.ac.at>
+
+	* DESCRIPTION (Version): New version is 1.2-16.
+
+	* man/date.object.Rd: Remove usage for as.data() as this is
+	documented (correctly) in 'as.date.Rd', and hence also the now
+	unnecessary \synopsis.
+
 2003-07-29  Kurt Hornik  <Kurt.Hornik@wu-wien.ac.at>
 
 	* DESCRIPTION (Version): New version is 1.2-15.
