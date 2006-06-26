@@ -1,0 +1,27 @@
+citHeader("To cite in publications use:")
+
+citEntry(entry = "Manual",
+	 title = "date: Functions for handling dates",
+	 author = personList(
+           person(first = "Terry", last = "Therneau",
+                  email = "therneau@mayo.edu"),
+           person(first = "Thomas", last = "Lumley",
+                  email = "thomas@biostat.washington.edu"),
+           person(first = "Kjetil", last = "Halvorsen",
+                  email = "khal@alumni.uv.es"),
+           person(first = "Kurt", last = "Hornik",
+                  email = "Kurt.Hornik@R-project.org")),
+         year = 2006,
+	 note = {
+             paste("R package version 1.2-19.",
+                   "S original by Terry Therneau,",
+		   "R port by Thomas Lumley, Kjetil Halvorsen,",
+		   "and Kurt Hornik.")
+         },
+	 url = "http://CRAN.R-project.org/",
+	 textVersion = {
+             paste("Terry Therneau and Thomas Lumley",
+	           "and Kjetil Halvorsen and Kurt Hornik (2006).",
+		   "date: Functions for handling dates.",
+                   "R package version 1.2-19.")
+         })

@@ -1,3 +1,9 @@
+2006-06-26  Kurt Hornik  <Kurt.Hornik@wu-wien.ac.at>
+
+	* DESCRIPTION (Version): New version is 1.2-19.
+
+	* inst/CITATION: New file.
+
 2004-06-09  Kurt Hornik  <Kurt.Hornik@wu-wien.ac.at>
 
 	* DESCRIPTION (Version): New version is 1.2-18.
