@@ -1,3 +1,10 @@
+2006-08-05  Kurt Hornik  <Kurt.Hornik@wu-wien.ac.at>
+
+	* DESCRIPTION (Version): New version is 1.2-20.
+
+	* man/as.date.Rd: Fix inconsistency spotted by Antony Unwin
+	<unwin@math.uni-augsburg.de>.
+
 2006-06-26  Kurt Hornik  <Kurt.Hornik@wu-wien.ac.at>
 
 	* DESCRIPTION (Version): New version is 1.2-19.
