@@ -9,7 +9,7 @@ as.date <- function(x, order = "mdy", ...) {
                    "myd" = c(2, 1, 3),
                    "dym" = c(3, 1, 2),
                    "dmy" = c(3, 2, 1),
-                   stop("Invalid value for `order' option"))
+                   stop("Invalid value for 'order' option"))
 	nn <- length(x)
 	temp <- .C("char_date",
                    as.integer(nn),
@@ -41,7 +41,7 @@ Ops.date <- function(e1, e2) {
     if (missing(e2))
         stop("Unary operations not meaningful for dates")
     if (.Generic == "&" || .Generic== "|")
-	stop(paste("\`", .Generic, "' not meaningful for dates",
+	stop(paste("'", .Generic, "' not meaningful for dates",
                    sep = ""))
     class(e1) <- NULL
     class(e2) <- NULL

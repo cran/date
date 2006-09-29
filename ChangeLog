@@ -1,3 +1,9 @@
+2006-09-29  Kurt Hornik  <Kurt.Hornik@wu-wien.ac.at>
+
+	* DESCRIPTION (Version): New version is 1.2-22.
+
+	* R/date.R: Fix invalid escapes.
+
 2006-09-09  Kurt Hornik  <Kurt.Hornik@wu-wien.ac.at>
 
 	* DESCRIPTION (Version): New version is 1.2-21.
