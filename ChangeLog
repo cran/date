@@ -1,3 +1,9 @@
+2006-12-19  Kurt Hornik  <Kurt.Hornik@wu-wien.ac.at>
+
+	* DESCRIPTION (Version): New version is 1.2-23.
+
+	* R/date.R (as.character.date): Add missing ... argument.
+
 2006-09-29  Kurt Hornik  <Kurt.Hornik@wu-wien.ac.at>
 
 	* DESCRIPTION (Version): New version is 1.2-22.
