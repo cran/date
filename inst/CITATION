@@ -1,5 +1,9 @@
 citHeader("To cite in publications use:")
 
+meta <- packageDescription("date")
+year <- sub("-.*", "", meta$Date)
+note <- sprintf("R package version %s.", meta$Version)
+
 citEntry(entry = "Manual",
 	 title = "date: Functions for handling dates",
 	 author = personList(
@@ -11,9 +15,9 @@ citEntry(entry = "Manual",
                   email = "khal@alumni.uv.es"),
            person(first = "Kurt", last = "Hornik",
                   email = "Kurt.Hornik@R-project.org")),
-         year = 2006,
+         year = year,
 	 note = {
-             paste("R package version 1.2-19.",
+             paste(note,
                    "S original by Terry Therneau,",
 		   "R port by Thomas Lumley, Kjetil Halvorsen,",
 		   "and Kurt Hornik.")
@@ -21,7 +25,8 @@ citEntry(entry = "Manual",
 	 url = "http://CRAN.R-project.org/",
 	 textVersion = {
              paste("Terry Therneau and Thomas Lumley",
-	           "and Kjetil Halvorsen and Kurt Hornik (2006).",
+	           "and Kjetil Halvorsen and Kurt Hornik",
+	           sprintf("(%s).", year),
 		   "date: Functions for handling dates.",
-                   "R package version 1.2-19.")
+                   note)
          })

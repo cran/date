@@ -1,5 +1,6 @@
 Package: date
-Version: 1.2-23
+Version: 1.2-24
+Date: 2007-02-01
 Author: Terry Therneau <therneau@mayo.edu>.  R port by Thomas Lumley
  <thomas@biostat.washington.edu>, Kjetil Halvorsen <khal@alumni.uv.es>,
  and Kurt Hornik <Kurt.Hornik@R-project.org>.
@@ -8,4 +9,4 @@ Title: Functions for handling dates
 Description: Functions for handling dates.
 Depends: graphics
 License: GPL
-Packaged: Tue Dec 19 17:59:27 2006; hornik
+Packaged: Thu Feb  1 14:54:06 2007; hornik
