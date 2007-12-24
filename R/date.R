@@ -153,7 +153,7 @@ print.date <- function(x, quote, prefix, ...) {
     invisible(print(as.character(x), quote = quote))
 }
 summary.date <- function(object, ...) {
-    y <- as.character(range(object))
+    y <- as.character(range(object, ...))
     names(y) <- c("First ", "Last  ")
     y
 }

@@ -1,3 +1,10 @@
+2007-12-24  Kurt Hornik  <Kurt.Hornik@wu-wien.ac.at>
+
+	* DESCRIPTION (Version): New version is 1.2-26.
+
+	* R/date.R (summary.date): Add ... so that na.rm can be used,
+	Suggested by Steven McKinney <smckinney@bccrc.ca>.
+
 2007-07-12  Kurt Hornik  <Kurt.Hornik@wu-wien.ac.at>
 
 	* DESCRIPTION (Version): New version is 1.2-25.
