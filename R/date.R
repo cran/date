@@ -224,7 +224,7 @@ mdy.date <- function(month, day, year, nineteen = TRUE, fillday = FALSE,
 date.mdy <- function(sdate, weekday = FALSE) {
     ##  Return the month, day, and year given a julian date
     attr(sdate, "class") <- NULL        # Stop any propogation of methods
-    sdate <- sdate + 2436935            # From SAS to Num Recipies base
+    sdate <- floor(sdate + 2436935)     # From SAS to Num Recipies base
                                         # point 
     wday <- as.integer((sdate + 1) %% 7 +1)
     temp <- ((sdate - 1867216) -.25) / 36524.25
