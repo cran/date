@@ -1,10 +1,13 @@
 useDynLib("date")
 
+importFrom("graphics", "Axis", "plot")
+
 export("as.date",
        "date.ddmmmyy", "date.mdy", "date.mmddyy", "date.mmddyyyy",
        "is.date",
        "mdy.date")
 
+S3method("Axis", "date")
 S3method("Math", "date")
 S3method("Ops", "date")
 S3method("Summary", "date")

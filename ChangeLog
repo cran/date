@@ -1,3 +1,14 @@
+2011-10-04  Kurt Hornik  <Kurt.Hornik@wu.ac.at>
+
+	* DESCRIPTION (Version): New version is 1.2-31.
+
+	* R/date.R
+	(as.vector.date): Coerce to numeric instead of character for
+	mode = "any" so that pairs() can work.
+	Suggested by Lasse Engbo Christiansen <lec@imm.dtu.dk>.
+	(Axis.date): Added.
+	Donated by Lasse Engbo Christiansen <lec@imm.dtu.dk>.
+
 2011-09-18  Kurt Hornik  <Kurt.Hornik@wu.ac.at>
 
 	* DESCRIPTION (Version): New version is 1.2-30.
@@ -78,7 +89,7 @@
 2004-01-31  Kurt Hornik  <Kurt.Hornik@wu-wien.ac.at>
 
 	* DESCRIPTION (Version): New version is 1.2-17.
-	
+
 	* INDEX: Removed.
 	* TITLE: Removed.
 

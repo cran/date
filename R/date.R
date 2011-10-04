@@ -31,6 +31,7 @@ as.date <- function(x, order = "mdy", ...) {
     else stop("Cannot coerce to date format")
     temp
 }
+
 is.date <- function(x)
     inherits(x, "date")
 
@@ -70,8 +71,10 @@ Ops.date <- function(e1, e2) {
 	}
     else get(.Generic)(e1, e2)
 }
+
 Math.date <- function(...)
     stop("Invalid operation on dates")
+
 Summary.date <- function (..., na.rm = FALSE) {
     ok <- switch(.Generic, min = , max = , range = TRUE, FALSE)
     if (!ok)
@@ -86,6 +89,7 @@ Summary.date <- function (..., na.rm = FALSE) {
     class(x) <- cl
     x
 }
+
 "[[.date" <- function(x, ..., drop = TRUE) {
     cl <- class(x)
     class(x) <- NULL
@@ -101,10 +105,13 @@ as.character.date <- function(x, ...) {
     else
         get(fun)(x)
 }
+
 as.data.frame.date <- as.data.frame.vector
+
 as.vector.date <- function(x, mode = "any") {
-    if (mode == "any" || mode == "character" || mode == "logical" || 
-        mode == "list") 
+    if (mode == "any")
+        as.vector(as.numeric(x), mode)
+    else if (mode == "character" || mode == "logical" || mode == "list")
         as.vector(as.character(x), mode)
     else as.vector(unclass(x), mode)
 }
@@ -112,6 +119,7 @@ as.vector.date <- function(x, mode = "any") {
 is.na.date <- function(x) {
     NextMethod(.Generic)
 }
+
 plot.date <- function(x, y, ..., axes, xaxt, xlab, ylab,
                       xlim = range(x, na.rm = TRUE),
                       ylim = range(y, na.rm = TRUE))
@@ -147,15 +155,39 @@ plot.date <- function(x, y, ..., axes, xaxt, xlab, ylab,
         axis(1, temp, as.character.date(temp), ...)
     }
 }
+
 print.date <- function(x, quote, prefix, ...) {
     if (missing(quote))
         quote <- FALSE
     invisible(print(as.character(x), quote = quote))
 }
+
 summary.date <- function(object, ...) {
     y <- as.character(range(object, ...))
     names(y) <- c("First ", "Last  ")
     y
+}
+
+Axis.date <-
+function(x = NULL, at = NULL, xlim=range(x, na.rm=TRUE), ..., 
+         side, labels = NULL)
+{
+    if(!is.null(x)) {
+        x <- c(x[!is.na(x)], xlim)
+        xd <- date.mdy(x)
+        temp <- pretty(x, n = par("lab")[1L])
+        delta <- temp[2L] - temp[1L]
+        if(delta < 1)
+            temp <- seq(min(x), max(x), 1)
+        else if(delta > 182) {
+            temp <- xd$year + (x - mdy.date(1, 1, xd$year)) / 365
+            temp <- pretty(temp, n = par("lab")[1L])
+            temp <- mdy.date(1, 1, floor(temp)) + floor((temp %% 1) * 365)
+        }
+        axis(side = side, at = temp, labels = as.character.date(temp), ...)
+    } else {
+        axis(side = side, at = at, labels = labels, ...)
+    }
 }
 
 mdy.date <- function(month, day, year, nineteen = TRUE, fillday = FALSE,
@@ -221,6 +253,7 @@ mdy.date <- function(month, day, year, nineteen = TRUE, fillday = FALSE,
     attr(temp, "class") <- "date"
     temp
 }
+
 date.mdy <- function(sdate, weekday = FALSE) {
     ##  Return the month, day, and year given a julian date
     attr(sdate, "class") <- NULL        # Stop any propogation of methods
@@ -253,6 +286,7 @@ date.ddmmmyy <- function(sdate) {
     ifelse(is.na(sdate), as.character(NA),
            paste(temp$day, month, tyr, sep = ""))
 }
+
 date.mmddyy <- function(sdate, sep = "/") {
     temp <- date.mdy(sdate)
     tyr <- ifelse(floor(temp$year / 100) == 19,
@@ -260,6 +294,7 @@ date.mmddyy <- function(sdate, sep = "/") {
     ifelse(is.na(sdate), as.character(NA),
            paste(temp$month, temp$day, tyr, sep = sep))
 }
+
 date.mmddyyyy <- function(sdate, sep = "/") {
     temp <- date.mdy(sdate)
     ifelse(is.na(sdate), as.character(NA),
