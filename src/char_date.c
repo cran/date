@@ -23,7 +23,7 @@ char_date(n, order, cdate, month, day, year)
     
     int what[3];
     int len;
-    char tdate[10];
+    char tdate[11];
 
     for (i=0; i< *n; i++) {
 	cc = cdate[i];
@@ -59,9 +59,9 @@ char_date(n, order, cdate, month, day, year)
 		else
 		    sprintf(tdate, "%c%c/%c%c/%c%c%c%c", cc[0], cc[1], cc[2],
 				    cc[3], cc[4], cc[5], cc[6], cc[7]);
-		}
-	    cc = tdate;
 	    }
+	    cc = tdate;
+	}
 
 	cc = id(cc, what, 0);
 	cc = id(cc, what, 1);
@@ -72,21 +72,21 @@ char_date(n, order, cdate, month, day, year)
 	    month[i] = -1*what[0];
 	    day[i]   =  what[1];
 	    year[i]  =  what[2];
-	    }
+	}
 	else if (what[1] <0) {
 	    month[i] = -1*what[1];
 	    day[i]   =  what[0];
 	    year[i]  =  what[2];
-	    }
+	}
 	else for (k=0; k<3; k++) {
 	    switch (order[k]) {
 		case 1: year[i] = what[k]; break;
 		case 2: month[i]= what[k]; break;
 		case 3: day[i]  = what[k]; break;
-		}
-	     }
-	}
+	    }
+	    }
     }
+}
 
 
 char *
@@ -107,7 +107,7 @@ id(str, array, k)
     if (*str=='\0') {
 	array[k]=0;
 	return(str);
-	}
+    }
 
     if (strchr("0123456789", *str) ==NULL) {
 	if      (strstr(str, "jan")==str) array[k] = -1;
@@ -127,15 +127,15 @@ id(str, array, k)
 	/* pass over the rest of the string */
 	while( *str!= '\0' && strchr("januaryfebmrchpilgstovd", *str)!=NULL)
 		 str++;
-	}
+    }
     else { /*is a number */
 	i =0;
 	while (*str!= '\0' &&  (j=strchr("0123456789", *str)) !=NULL) {
 	    str++;
 	    i = (10*i) +(*j - '0');
-	    }
-	array[k] = i;
 	}
+	array[k] = i;
+    }
 
     return(str);
-    }
+}

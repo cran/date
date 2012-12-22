@@ -1,4 +1,13 @@
+2012-11-23  Kurt Hornik  <Kurt.Hornik@wu.ac.at>
+
+	* DESCRIPTION (Version): New version is 1.2-33.
+
+	* src/char_date.c (char_date): Try avoiding buffer overflow as
+	suggested by Erik Doffagne <erik.doffagne@gmail.com>.
+
 2011-12-23  Kurt Hornik  <Kurt.Hornik@wu.ac.at>
+
+	* DESCRIPTION (Version): New version is 1.2-32.
 
 	* R/date.R (summary.date): Sanitize handling of extra arguments.
 	Spotted by Marina Saadia Otero <marina.saadia@gmail.com>.
