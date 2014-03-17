@@ -1,3 +1,9 @@
+2014-03-17  Kurt Hornik  <Kurt.Hornik@wu.ac.at>
+
+	* DESCRIPTION (Version): New version is 1.2-34.
+
+	* NAMESPACE: Improve.
+
 2012-11-23  Kurt Hornik  <Kurt.Hornik@wu.ac.at>
 
 	* DESCRIPTION (Version): New version is 1.2-33.

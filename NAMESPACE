@@ -1,6 +1,6 @@
 useDynLib("date")
 
-importFrom("graphics", "Axis", "plot")
+importFrom("graphics", "Axis", "axis", "par", "plot")
 
 export("as.date",
        "date.ddmmmyy", "date.mdy", "date.mmddyy", "date.mmddyyyy",
@@ -20,4 +20,3 @@ S3method("is.na", "date")
 S3method("plot", "date")
 S3method("print", "date")
 S3method("summary", "date")
-       
