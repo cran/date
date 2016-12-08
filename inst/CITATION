@@ -7,7 +7,7 @@ note <- sprintf("R package version %s.", meta$Version)
 
 citEntry(entry = "Manual",
 	 title = "date: Functions for handling dates",
-	 author = personList(
+	 author = c(
            person("Terry", "Therneau",
                   email = "therneau@mayo.edu"),
            person("Thomas", "Lumley",
@@ -23,7 +23,7 @@ citEntry(entry = "Manual",
 		   "R port by Thomas Lumley, Kjetil Halvorsen,",
 		   "and Kurt Hornik.")
          },
-	 url = "http://CRAN.R-project.org/package=date",
+	 url = "https://CRAN.R-project.org/package=date",
 	 textVersion = {
              paste("Terry Therneau and Thomas Lumley",
 	           "and Kjetil Halvorsen and Kurt Hornik",
