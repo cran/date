@@ -11,14 +11,13 @@ as.date <- function(x, order = "mdy", ...) {
                    "dmy" = c(3, 2, 1),
                    stop("Invalid value for 'order' option"))
 	nn <- length(x)
-	temp <- .C("char_date",
+	temp <- .C(R_char_date,
                    as.integer(nn),
                    as.integer(order.vec),
                    as.character(x),
-                   month =integer(nn),
+                   month = integer(nn),
                    day = integer(nn),
-                   year = integer(nn),
-                   PACKAGE = "date")
+                   year = integer(nn))
 	month <- ifelse(temp$month < 1 | temp$month > 12, NA, temp$month)
 	day   <- ifelse(temp$day == 0, NA, temp$day)
 	year  <- ifelse(temp$year == 0, NA, temp$year)

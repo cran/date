@@ -1,4 +1,4 @@
-useDynLib("date")
+useDynLib("date", .registration = TRUE)
 
 importFrom("graphics", "Axis", "axis", "par", "plot")
 
