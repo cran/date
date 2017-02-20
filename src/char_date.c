@@ -8,8 +8,8 @@
 char *id();
 
 void
-R_char_date(int *n, int *order, char **cdate,
-	    int *month, int *day, int *year)
+char_date(int *n, int *order, char **cdate,
+	  int *month, int *day, int *year)
 {
     register int i,k, ii;
     register char *j;
