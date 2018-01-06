@@ -299,3 +299,27 @@ date.mmddyyyy <- function(sdate, sep = "/") {
     ifelse(is.na(sdate), as.character(NA),
            paste(temp$month, temp$day, temp$year, sep = sep))
 }
+
+as.Date.date <-
+function(x, ...)
+{
+    if(inherits(x, "date")) {
+        x <- (x - 3653)                 # origin 1960-01-01
+        return(structure(x, class = "Date"))
+    } else stop(gettextf("'%s' is not a \"date\" object",
+                         deparse(substitute(x)) ))
+}
+
+as.POSIXct.date <-
+function(x, ...)
+{
+    if(inherits(x, "date")) {
+        x <- (x - 3653) * 86400         # origin 1960-01-01
+        return(structure(x, class = c("POSIXct", "POSIXt")))
+    } else stop(gettextf("'%s' is not a \"date\" object",
+                         deparse(substitute(x)) ))
+}
+
+as.POSIXlt.date <-
+function(x, ...)
+    as.POSIXlt(as.POSIXct(x), ...)
