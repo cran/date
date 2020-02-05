@@ -2,7 +2,7 @@
 #include <Rinternals.h>
 #include <R_ext/Rdynload.h>
 
-void char_date(int *n, int *order, char *cdate,
+void char_date(int *n, int *order, char **cdate,
 	       int *month, int *day, int *year);
 
 static const R_CMethodDef CEntries[] = {
