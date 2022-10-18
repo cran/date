@@ -1,5 +1,5 @@
-12dc00e54e603e097fbba53d88f64330 *ChangeLog
-5a18207343e2a2413cde56b8a7f0f938 *DESCRIPTION
+e9f6018d02e3386925bc9cf1d255a378 *ChangeLog
+354dfec817a4ab65259be0353c6de470 *DESCRIPTION
 a8b6c18212eecaea56e37d69d9345112 *NAMESPACE
 f57d803d7b43b4dd5128b1ab3526dc4c *R/date.R
 a3e0e3eca34a2106150e9e09353aca7f *inst/CITATION
@@ -10,5 +10,5 @@ a3e0e3eca34a2106150e9e09353aca7f *inst/CITATION
 142d36a74c2ff94965e87825db4a192d *man/date.mmddyyyy.Rd
 985bc0737a3318f257e33097aaa1be2c *man/date.object.Rd
 c0b2d7348776c34480f8880afcd768d3 *man/mdy.date.Rd
-ddbe638b843eee472a3bcc1543a470bb *src/char_date.c
+94e99fc3b46927f9f2cc1acd5684496e *src/char_date.c
 3dbc83a0b110757f51d1306003a4aed7 *src/init.c

@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <string.h>
 
-char *id();
+char * id(char *str, int array[], int k);
 
 void
 char_date(int *n, int *order, char **cdate,
@@ -84,10 +84,7 @@ char_date(int *n, int *order, char **cdate,
 
 
 char *
-id(str, array, k)
-    char *str;
-    int  array[];
-    int  k;
+id(char *str, int array[], int k)
 {
     register int i;
     register char *j;
