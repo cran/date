@@ -34,25 +34,28 @@ char_date(int *n, int *order, char **cdate,
 	    if ((cc[k] < '0') || (cc[k] > '9')) break;
 	if (k>=len && (len>=5 && len<=8)) {
 	    if (len==5)
-		sprintf(tdate, "0%c/%c%c/%c%c", cc[0], cc[1], cc[2], cc[3],
-						cc[4]);
+		snprintf(tdate, 11, "0%c/%c%c/%c%c", 
+			 cc[0], cc[1], cc[2], cc[3], cc[4]);
 	    else if (len==6)
-		sprintf(tdate, "%c%c/%c%c/%c%c", cc[0], cc[1], cc[2], cc[3],
-						 cc[4], cc[5]);
+		snprintf(tdate, 11, "%c%c/%c%c/%c%c", 
+			 cc[0], cc[1], cc[2], cc[3], cc[4], cc[5]);
 	    else {
 		if (len==7) {
 		    for (ii=7; ii>0; ii--) cc[ii]= cc[ii-1];
 		    cc[0] = '0';
 		    }
 		if (order[0]==1)
-		    sprintf(tdate, "%c%c%c%c/%c%c/%c%c", cc[0], cc[1], cc[2],
-				    cc[3], cc[4], cc[5], cc[6], cc[7]);
+		    snprintf(tdate, 11, "%c%c%c%c/%c%c/%c%c", 
+			     cc[0], cc[1], cc[2], cc[3], cc[4], cc[5],
+			     cc[6], cc[7]);
 		else if (order[1]==1)
-		    sprintf(tdate, "%c%c/%c%c%c%c/%c%c", cc[0], cc[1], cc[2],
-				    cc[3], cc[4], cc[5], cc[6], cc[7]);
+		    snprintf(tdate, 11, "%c%c/%c%c%c%c/%c%c",
+			     cc[0], cc[1], cc[2], cc[3], cc[4], cc[5],
+			     cc[6], cc[7]);
 		else
-		    sprintf(tdate, "%c%c/%c%c/%c%c%c%c", cc[0], cc[1], cc[2],
-				    cc[3], cc[4], cc[5], cc[6], cc[7]);
+		    snprintf(tdate, 11, "%c%c/%c%c/%c%c%c%c",
+			     cc[0], cc[1], cc[2], cc[3], cc[4], cc[5],
+			     cc[6], cc[7]);
 	    }
 	    cc = tdate;
 	}
