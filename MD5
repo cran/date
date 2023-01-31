@@ -1,8 +1,7 @@
-406cf14bbf5ebf2ca199393f6735999a *ChangeLog
-5903678d4619ee841cc1bfae865f9fc9 *DESCRIPTION
+92c7f75ffebd48114045bc3de613c5ac *ChangeLog
+0420815b5e19e662afdd27ef1cb58885 *DESCRIPTION
 a8b6c18212eecaea56e37d69d9345112 *NAMESPACE
 f57d803d7b43b4dd5128b1ab3526dc4c *R/date.R
-a3e0e3eca34a2106150e9e09353aca7f *inst/CITATION
 527f9134efafcb21a9f296e6d49a91b7 *man/as.date.Rd
 0dbec559eb5a374a7daa6f9724d79350 *man/date.ddmmmyy.Rd
 6da259c0f5f184f490ba2ae8c9d10617 *man/date.mdy.Rd
